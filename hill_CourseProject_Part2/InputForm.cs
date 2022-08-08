@@ -16,5 +16,16 @@ namespace hill_CourseProject_Part2
         {
             InitializeComponent();
         }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Hide();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }

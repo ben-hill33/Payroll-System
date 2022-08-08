@@ -37,9 +37,10 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(12, 12);
+            this.AddButton.Location = new System.Drawing.Point(60, 36);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(251, 53);
+            this.AddButton.Size = new System.Drawing.Size(335, 66);
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(269, 12);
+            this.RemoveButton.Location = new System.Drawing.Point(403, 36);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(165, 53);
+            this.RemoveButton.Size = new System.Drawing.Size(220, 66);
             this.RemoveButton.TabIndex = 1;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -57,9 +59,10 @@
             // 
             // DisplayButton
             // 
-            this.DisplayButton.Location = new System.Drawing.Point(440, 12);
+            this.DisplayButton.Location = new System.Drawing.Point(631, 36);
+            this.DisplayButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DisplayButton.Name = "DisplayButton";
-            this.DisplayButton.Size = new System.Drawing.Size(155, 53);
+            this.DisplayButton.Size = new System.Drawing.Size(207, 66);
             this.DisplayButton.TabIndex = 2;
             this.DisplayButton.Text = "Display";
             this.DisplayButton.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // PrintPaychecksButton
             // 
-            this.PrintPaychecksButton.Location = new System.Drawing.Point(601, 12);
+            this.PrintPaychecksButton.Location = new System.Drawing.Point(845, 36);
+            this.PrintPaychecksButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PrintPaychecksButton.Name = "PrintPaychecksButton";
-            this.PrintPaychecksButton.Size = new System.Drawing.Size(263, 53);
+            this.PrintPaychecksButton.Size = new System.Drawing.Size(351, 66);
             this.PrintPaychecksButton.TabIndex = 3;
             this.PrintPaychecksButton.Text = "Print Paychecks";
             this.PrintPaychecksButton.UseVisualStyleBackColor = true;
@@ -78,22 +82,25 @@
             // EmployeesListBox
             // 
             this.EmployeesListBox.FormattingEnabled = true;
-            this.EmployeesListBox.ItemHeight = 25;
-            this.EmployeesListBox.Location = new System.Drawing.Point(12, 71);
+            this.EmployeesListBox.ItemHeight = 31;
+            this.EmployeesListBox.Location = new System.Drawing.Point(61, 109);
+            this.EmployeesListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmployeesListBox.Name = "EmployeesListBox";
-            this.EmployeesListBox.Size = new System.Drawing.Size(852, 379);
+            this.EmployeesListBox.Size = new System.Drawing.Size(1135, 469);
             this.EmployeesListBox.TabIndex = 4;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 496);
+            this.ClientSize = new System.Drawing.Size(1257, 615);
             this.Controls.Add(this.EmployeesListBox);
             this.Controls.Add(this.PrintPaychecksButton);
             this.Controls.Add(this.DisplayButton);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.AddButton);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Payroll System";
             this.ResumeLayout(false);

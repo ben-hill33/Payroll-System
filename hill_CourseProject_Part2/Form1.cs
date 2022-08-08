@@ -12,7 +12,29 @@ namespace hill_CourseProject_Part2
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            EmployeesListBox.Items.Add("New Employee");
+            // Add item to employee listbox.
+            InputForm frmInput = new InputForm();
+
+            using (frmInput)
+            {
+                DialogResult result = frmInput.ShowDialog();
+
+                // Check if input form was cancelled.
+                if (result == DialogResult.Cancel)
+                    return; // If yes, cancel input.
+
+                // Get user input and create new Employee object.
+                string fstName = frmInput.FirstNameTextBox.Text;
+                string lstName = frmInput.LastNameTextBox.Text;
+                string ssn = frmInput.SSNTextBox.Text;
+                string date = frmInput.HireDateTextBox.Text;
+                DateTime hireDate = DateTime.Parse(date);
+
+                Employee emp = new Employee(fstName, lstName, ssn, hireDate);
+
+                // Add Employee object to employee listbox
+                EmployeesListBox.Items.Add(emp);
+            }
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
