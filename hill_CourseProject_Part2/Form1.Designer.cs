@@ -39,7 +39,7 @@
             // 
             this.AddButton.Location = new System.Drawing.Point(12, 12);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(99, 53);
+            this.AddButton.Size = new System.Drawing.Size(251, 53);
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(117, 12);
+            this.RemoveButton.Location = new System.Drawing.Point(269, 12);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(122, 53);
+            this.RemoveButton.Size = new System.Drawing.Size(165, 53);
             this.RemoveButton.TabIndex = 1;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@
             // 
             // DisplayButton
             // 
-            this.DisplayButton.Location = new System.Drawing.Point(245, 12);
+            this.DisplayButton.Location = new System.Drawing.Point(440, 12);
             this.DisplayButton.Name = "DisplayButton";
-            this.DisplayButton.Size = new System.Drawing.Size(99, 53);
+            this.DisplayButton.Size = new System.Drawing.Size(155, 53);
             this.DisplayButton.TabIndex = 2;
             this.DisplayButton.Text = "Display";
             this.DisplayButton.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // 
             // PrintPaychecksButton
             // 
-            this.PrintPaychecksButton.Location = new System.Drawing.Point(350, 12);
+            this.PrintPaychecksButton.Location = new System.Drawing.Point(601, 12);
             this.PrintPaychecksButton.Name = "PrintPaychecksButton";
-            this.PrintPaychecksButton.Size = new System.Drawing.Size(460, 53);
+            this.PrintPaychecksButton.Size = new System.Drawing.Size(263, 53);
             this.PrintPaychecksButton.TabIndex = 3;
             this.PrintPaychecksButton.Text = "Print Paychecks";
             this.PrintPaychecksButton.UseVisualStyleBackColor = true;
