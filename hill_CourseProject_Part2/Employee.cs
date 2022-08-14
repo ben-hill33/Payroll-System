@@ -13,6 +13,7 @@ namespace hill_CourseProject_Part2
         private string lastName;
         private string ssn;
         private DateTime hireDate;
+        private Benefits benefits;
 
         // constructors
         public Employee()
@@ -120,6 +121,18 @@ namespace hill_CourseProject_Part2
                 {
                     hireDate = DateTime.MinValue;   // 01/01/0001 (blocks data if unrealistic date is given)
                 }
+            }
+        }
+
+        public Benefits BenefitsPackage
+        {
+            get
+            {
+                return benefits;
+            }
+            set
+            {
+                this.benefits = value;
             }
         }
     }
