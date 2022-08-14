@@ -27,5 +27,6 @@ namespace hill_CourseProject_Part2
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
     }
 }
