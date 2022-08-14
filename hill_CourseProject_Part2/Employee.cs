@@ -24,12 +24,13 @@ namespace hill_CourseProject_Part2
             hireDate = DateTime.MinValue;
         }
 
-        public Employee(string firstName, string lastName, string ssn, DateTime hireDate)
+        public Employee(string firstName, string lastName, string ssn, DateTime hireDate, Benefits benefits)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             SSN = ssn;
             HireDate = hireDate;
+            BenefitsPackage = benefits;
         }
 
         // behaviors

@@ -30,8 +30,12 @@ namespace hill_CourseProject_Part2
                 string ssn = frmInput.SSNTextBox.Text;
                 string date = frmInput.HireDateTextBox.Text;
                 DateTime hireDate = DateTime.Parse(date);
+                string healthIns = frmInput.HealthInsTextBox.Text;
+                double lifeIns = Double.Parse(frmInput.LifeInsTextBox.Text);
+                int vacation = Int32.Parse(frmInput.VacationTextBox.Text);
 
-                Employee emp = new Employee(fstName, lstName, ssn, hireDate);
+                Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
+                Employee emp = new Employee(fstName, lstName, ssn, hireDate, benefits);
 
                 // Add Employee object to employee listbox
                 EmployeesListBox.Items.Add(emp);
@@ -51,7 +55,8 @@ namespace hill_CourseProject_Part2
                 Employee tempEmp = (Employee)EmployeesListBox.Items[i];
 
                 streamW.WriteLine($"{tempEmp.FirstName},{tempEmp.LastName},{tempEmp.SSN}," +
-                    $"{tempEmp.HireDate.ToShortDateString()}");
+                    $"{tempEmp.HireDate.ToShortDateString()}, {tempEmp.BenefitsPackage.HealthInsurance}," +
+                    $"{tempEmp.BenefitsPackage.LifeInsurance}, {tempEmp.BenefitsPackage.Vacation}");
             }
 
             streamW.Close();
@@ -83,6 +88,12 @@ namespace hill_CourseProject_Part2
             // Clear listbox
             EmployeesListBox.Items.Clear();
 
+            // read all Employee objects from the file
+            ReadEmpsFromFile();
+        }
+
+        private void ReadEmpsFromFile()
+        {
             // Read all Employee object from the file
             string fileName = "Employees.csv";
 
@@ -100,12 +111,16 @@ namespace hill_CourseProject_Part2
                     string lstName = parts[1];
                     string ssn = parts[2];
                     DateTime hireDate = DateTime.Parse(parts[3]);
+                    string healthIns = parts[4];
+                    double lifeIns = Double.Parse(parts[5]);
+                    int vacation = Int32.Parse(parts[6]);
 
-                    Employee emp = new Employee(fstName, lstName, ssn, hireDate);
+                    // Create employee object and add it to listbox
+                    Employee emp = new Employee(fstName, lstName, ssn, 
+                        hireDate, new Benefits(healthIns, lifeIns, vacation));
                     EmployeesListBox.Items.Add(emp);
                 }
             }
-
         }
 
         private void PrintPaychecksButton_Click(object sender, EventArgs e)
