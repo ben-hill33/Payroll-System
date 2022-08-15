@@ -1,1 +1,5 @@
-# hill_CourseProject_Part2
+# Payroll System
+
+Developer: Ben Hill
+
+
