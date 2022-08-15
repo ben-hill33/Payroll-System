@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary; // translates binary
 using System.Windows.Forms;
 
 namespace hill_CourseProject_Part2
 {
     public partial class MainForm : Form
     {
+        // Form level references
+        const string FILENAME = "Employees.dat";
+
         public MainForm()
         {
             InitializeComponent();
@@ -71,19 +76,23 @@ namespace hill_CourseProject_Part2
 
         private void WriteEmpsToFile()
         {
-            // Write Employee objects to the file
-            string fileName = "Employees.csv";
-            StreamWriter streamW = new StreamWriter(fileName);
-            for (int i = 0; i < EmployeesListBox.Items.Count; i++)
-            {
-                Employee tempEmp = (Employee)EmployeesListBox.Items[i];
+            // Convert listbox items to a generic list.
+            List<Employee> empList = new List<Employee>();
 
-                streamW.WriteLine($"{tempEmp.FirstName},{tempEmp.LastName},{tempEmp.SSN}," +
-                    $"{tempEmp.HireDate.ToShortDateString()}, {tempEmp.BenefitsPackage.HealthInsurance}," +
-                    $"{tempEmp.BenefitsPackage.LifeInsurance}, {tempEmp.BenefitsPackage.Vacation}");
+            foreach (Employee emp in EmployeesListBox.Items)
+            {
+                empList.Add(emp);
             }
 
-            streamW.Close();
+            // Open pipe to the file and create a translator.
+            FileStream fs = new FileStream(FILENAME, FileMode.Create);
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            // Write generic list to the file.
+            formatter.Serialize(fs, empList);
+
+            // Close pipe.
+            fs.Close();
 
             // tell user that records were written to file
             MessageBox.Show("Employees were written to the file.");
@@ -118,30 +127,22 @@ namespace hill_CourseProject_Part2
 
         private void ReadEmpsFromFile()
         {
-            // Read all Employee object from the file
-            string fileName = "Employees.csv";
-
-            StreamReader streamR = new StreamReader(fileName);
-
-            using (streamR)
+            // Check to see if file exists.
+            if (File.Exists(FILENAME) && new FileInfo(FILENAME).Length > 0)
             {
-                while (streamR.Peek() > -1)
+                // Create pipe from the file and create the translator
+                FileStream fs = new FileStream(FILENAME, FileMode.Open);
+                BinaryFormatter formatter = new BinaryFormatter();
+
+                // Read Employee objects from the file.
+                List<Employee> empList = (List<Employee>)formatter.Deserialize(fs);
+
+                // Close the pipe.
+                fs.Close();
+
+                // Copy the Employee objects into listbox
+                foreach(Employee emp in empList)
                 {
-                    // Read line and break it into pieces by commas
-                    string line = streamR.ReadLine();
-                    string[] parts = line.Split(',');
-
-                    string fstName = parts[0];
-                    string lstName = parts[1];
-                    string ssn = parts[2];
-                    DateTime hireDate = DateTime.Parse(parts[3]);
-                    string healthIns = parts[4];
-                    double lifeIns = Double.Parse(parts[5]);
-                    int vacation = Int32.Parse(parts[6]);
-
-                    // Create employee object and add it to listbox
-                    Employee emp = new Employee(fstName, lstName, ssn, 
-                        hireDate, new Benefits(healthIns, lifeIns, vacation));
                     EmployeesListBox.Items.Add(emp);
                 }
             }
@@ -169,6 +170,7 @@ namespace hill_CourseProject_Part2
                     MessageBox.Show("Error. Invalid Employee.");
                     return;
                 }
+
                 Employee emp = (Employee)EmployeesListBox.Items[itemNumber];
 
                 frmUpdate.FirstNameTextBox.Text = emp.FirstName;
@@ -178,6 +180,20 @@ namespace hill_CourseProject_Part2
                 frmUpdate.HealthInsTextBox.Text = emp.BenefitsPackage.HealthInsurance;
                 frmUpdate.LifeInsTextBox.Text = emp.BenefitsPackage.LifeInsurance.ToString("C2");
                 frmUpdate.VacationTextBox.Text = emp.BenefitsPackage.Vacation.ToString();
+
+                if(emp is Hourly)
+                {
+                    Hourly hourly = (Hourly)emp;
+                    frmUpdate.HourlyRadioButton.Checked = true;
+                    frmUpdate.PayOneTextBox.Text = hourly.HourlyRate.ToString("N2");
+                    frmUpdate.PayTwoTextBox.Text = hourly.HoursWorked.ToString("F1");
+                }
+                else if(emp is Salary)
+                {
+                    Salary sal = (Salary)emp;
+                    frmUpdate.SalaryRadioButton.Checked = true;
+                    frmUpdate.PayOneTextBox.Text = sal.AnnualSalary.ToString("N2");
+                }
 
                 DialogResult result = frmUpdate.ShowDialog();
 
@@ -202,7 +218,18 @@ namespace hill_CourseProject_Part2
                 int vacationDays = Int32.Parse(frmUpdate.VacationTextBox.Text);
 
                 Benefits benefits = new Benefits(healthIns, lifeIns, vacationDays);
-                emp = new Employee(fName, lName, ssn, hireDate, benefits);
+
+                if (frmUpdate.HourlyRadioButton.Checked)
+                {
+                    float rate = float.Parse(frmUpdate.PayOneTextBox.Text);
+                    float hours = float.Parse(frmUpdate.PayTwoTextBox.Text);
+                    emp = new Hourly(fName, lName, ssn, hireDate, benefits, rate, hours);
+                }
+                else if (frmUpdate.SalaryRadioButton.Checked)
+                {
+                    double salary = Double.Parse(frmUpdate.PayOneTextBox.Text);
+                    emp = new Salary(fName, lName, ssn, hireDate, benefits, salary);
+                }
 
                 // Add the updated Employee object to the employees listbox.
                 EmployeesListBox.Items.Add(emp);

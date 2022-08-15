@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hill_CourseProject_Part2
 {
+    [Serializable]
     internal class Benefits
     {
         // attributes
