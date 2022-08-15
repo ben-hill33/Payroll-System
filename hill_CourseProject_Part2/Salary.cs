@@ -30,6 +30,11 @@ namespace hill_CourseProject_Part2
             return base.ToString() + ", Salary: " + annualSalary.ToString("C");
         }
 
+        public override double CalculatePay()
+        {
+            return annualSalary / 26.0;
+        }
+
         // properties
         public double AnnualSalary
         {

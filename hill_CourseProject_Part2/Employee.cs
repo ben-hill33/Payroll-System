@@ -8,12 +8,12 @@ namespace hill_CourseProject_Part2
 {
     class Employee
     {
-        // attributes
-        private string firstName;
-        private string lastName;
-        private string ssn;
-        private DateTime hireDate;
-        private Benefits benefits;
+        // protected attributes give access to child objects.
+        protected string firstName;
+        protected string lastName;
+        protected string ssn;
+        protected DateTime hireDate;
+        protected Benefits benefits;
 
         // constructors
         public Employee()
@@ -41,9 +41,10 @@ namespace hill_CourseProject_Part2
             return $"{firstName} {lastName}, SSN: {ssn}, Hire Date: {hireDate.ToShortDateString()}";
         }
 
-        Double CalculatePay()
+        // virtual allows child classes access
+        public virtual double CalculatePay()
         {
-            return 0;
+            return 0.0;
         }
 
         // properties
