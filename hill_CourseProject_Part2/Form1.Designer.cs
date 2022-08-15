@@ -81,12 +81,13 @@
             // 
             // EmployeesListBox
             // 
+            this.EmployeesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeesListBox.FormattingEnabled = true;
-            this.EmployeesListBox.ItemHeight = 31;
+            this.EmployeesListBox.ItemHeight = 29;
             this.EmployeesListBox.Location = new System.Drawing.Point(61, 109);
             this.EmployeesListBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeesListBox.Name = "EmployeesListBox";
-            this.EmployeesListBox.Size = new System.Drawing.Size(1135, 469);
+            this.EmployeesListBox.Size = new System.Drawing.Size(1135, 468);
             this.EmployeesListBox.TabIndex = 4;
             this.EmployeesListBox.DoubleClick += new System.EventHandler(this.EmployeesListBox_DoubleClick);
             // 
