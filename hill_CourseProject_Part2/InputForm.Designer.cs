@@ -39,12 +39,12 @@
             this.SubmitButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.BenefitsGroupBox = new System.Windows.Forms.GroupBox();
-            this.HealthInsTextBox = new System.Windows.Forms.TextBox();
-            this.HealthInsLabel = new System.Windows.Forms.Label();
-            this.LifeInsTextBox = new System.Windows.Forms.TextBox();
-            this.LifeInsLabel = new System.Windows.Forms.Label();
             this.VacationTextBox = new System.Windows.Forms.TextBox();
             this.VacationLabel = new System.Windows.Forms.Label();
+            this.LifeInsTextBox = new System.Windows.Forms.TextBox();
+            this.LifeInsLabel = new System.Windows.Forms.Label();
+            this.HealthInsTextBox = new System.Windows.Forms.TextBox();
+            this.HealthInsLabel = new System.Windows.Forms.Label();
             this.BenefitsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,21 +149,21 @@
             this.BenefitsGroupBox.TabStop = false;
             this.BenefitsGroupBox.Text = "Benefits";
             // 
-            // HealthInsTextBox
+            // VacationTextBox
             // 
-            this.HealthInsTextBox.Location = new System.Drawing.Point(269, 56);
-            this.HealthInsTextBox.Name = "HealthInsTextBox";
-            this.HealthInsTextBox.Size = new System.Drawing.Size(446, 38);
-            this.HealthInsTextBox.TabIndex = 3;
+            this.VacationTextBox.Location = new System.Drawing.Point(269, 156);
+            this.VacationTextBox.Name = "VacationTextBox";
+            this.VacationTextBox.Size = new System.Drawing.Size(446, 38);
+            this.VacationTextBox.TabIndex = 7;
             // 
-            // HealthInsLabel
+            // VacationLabel
             // 
-            this.HealthInsLabel.AutoSize = true;
-            this.HealthInsLabel.Location = new System.Drawing.Point(35, 56);
-            this.HealthInsLabel.Name = "HealthInsLabel";
-            this.HealthInsLabel.Size = new System.Drawing.Size(228, 31);
-            this.HealthInsLabel.TabIndex = 2;
-            this.HealthInsLabel.Text = "Health Insurance:";
+            this.VacationLabel.AutoSize = true;
+            this.VacationLabel.Location = new System.Drawing.Point(35, 156);
+            this.VacationLabel.Name = "VacationLabel";
+            this.VacationLabel.Size = new System.Drawing.Size(198, 31);
+            this.VacationLabel.TabIndex = 6;
+            this.VacationLabel.Text = "Vacation Days:";
             // 
             // LifeInsTextBox
             // 
@@ -181,21 +181,21 @@
             this.LifeInsLabel.TabIndex = 4;
             this.LifeInsLabel.Text = "Life Insurance:";
             // 
-            // VacationTextBox
+            // HealthInsTextBox
             // 
-            this.VacationTextBox.Location = new System.Drawing.Point(269, 156);
-            this.VacationTextBox.Name = "VacationTextBox";
-            this.VacationTextBox.Size = new System.Drawing.Size(446, 38);
-            this.VacationTextBox.TabIndex = 7;
+            this.HealthInsTextBox.Location = new System.Drawing.Point(269, 56);
+            this.HealthInsTextBox.Name = "HealthInsTextBox";
+            this.HealthInsTextBox.Size = new System.Drawing.Size(446, 38);
+            this.HealthInsTextBox.TabIndex = 3;
             // 
-            // VacationLabel
+            // HealthInsLabel
             // 
-            this.VacationLabel.AutoSize = true;
-            this.VacationLabel.Location = new System.Drawing.Point(35, 156);
-            this.VacationLabel.Name = "VacationLabel";
-            this.VacationLabel.Size = new System.Drawing.Size(198, 31);
-            this.VacationLabel.TabIndex = 6;
-            this.VacationLabel.Text = "Vacation Days:";
+            this.HealthInsLabel.AutoSize = true;
+            this.HealthInsLabel.Location = new System.Drawing.Point(35, 56);
+            this.HealthInsLabel.Name = "HealthInsLabel";
+            this.HealthInsLabel.Size = new System.Drawing.Size(228, 31);
+            this.HealthInsLabel.TabIndex = 2;
+            this.HealthInsLabel.Text = "Health Insurance:";
             // 
             // InputForm
             // 
@@ -230,7 +230,6 @@
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Label SSNLabel;
         private System.Windows.Forms.Label HireDateLabel;
-        private System.Windows.Forms.Button SubmitButton;
         private System.Windows.Forms.Button ExitButton;
         public System.Windows.Forms.TextBox FirstNameTextBox;
         public System.Windows.Forms.TextBox LastNameTextBox;
@@ -243,5 +242,6 @@
         private System.Windows.Forms.Label LifeInsLabel;
         public System.Windows.Forms.TextBox HealthInsTextBox;
         private System.Windows.Forms.Label HealthInsLabel;
+        public System.Windows.Forms.Button SubmitButton;
     }
 }

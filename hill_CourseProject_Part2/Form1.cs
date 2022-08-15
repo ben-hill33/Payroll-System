@@ -127,5 +127,65 @@ namespace hill_CourseProject_Part2
         {
             MessageBox.Show("Printing paychecks for all employees...");
         }
+
+        private void EmployeesListBox_DoubleClick(object sender, EventArgs e)
+        {
+            // Edit selected employee in the listbox
+            InputForm frmUpdate = new InputForm();
+
+            using (frmUpdate)
+            {
+                frmUpdate.Text = "Employee Update Form";
+                frmUpdate.SubmitButton.Text = "Update";
+
+                int itemNumber = EmployeesListBox.SelectedIndex;
+
+                if(itemNumber < 0)
+                {
+                    MessageBox.Show("Error. Invalid Employee.");
+                    return;
+                }
+                Employee emp = (Employee)EmployeesListBox.Items[itemNumber];
+
+                frmUpdate.FirstNameTextBox.Text = emp.FirstName;
+                frmUpdate.LastNameTextBox.Text = emp.LastName;
+                frmUpdate.SSNTextBox.Text = emp.SSN;
+                frmUpdate.HireDateTextBox.Text = emp.HireDate.ToShortDateString();
+                frmUpdate.HealthInsTextBox.Text = emp.BenefitsPackage.HealthInsurance;
+                frmUpdate.LifeInsTextBox.Text = emp.BenefitsPackage.LifeInsurance.ToString("C2");
+                frmUpdate.VacationTextBox.Text = emp.BenefitsPackage.Vacation.ToString();
+
+                DialogResult result = frmUpdate.ShowDialog();
+
+                if(result == DialogResult.Cancel)
+                {
+                    return; // end method since user cancelled update.
+                }
+
+                EmployeesListBox.Items.RemoveAt(itemNumber);
+
+                // Get user's updated input and create an Employee object.
+                string fName = frmUpdate.FirstNameTextBox.Text;
+                string lName = frmUpdate.LastNameTextBox.Text;
+                string ssn = frmUpdate.SSNTextBox.Text;
+                string date = frmUpdate.HireDateTextBox.Text;
+                DateTime hireDate = DateTime.Parse(date);
+                string healthIns = frmUpdate.HealthInsTextBox.Text;
+                // pull a substring that does not contain the initial '$' sign
+                string lifeInsString = frmUpdate.LifeInsTextBox.Text;
+                lifeInsString = lifeInsString.Substring(1);
+                double lifeIns = Double.Parse(lifeInsString);
+                int vacationDays = Int32.Parse(frmUpdate.VacationTextBox.Text);
+
+                Benefits benefits = new Benefits(healthIns, lifeIns, vacationDays);
+                emp = new Employee(fName, lName, ssn, hireDate, benefits);
+
+                // Add the updated Employee object to the employees listbox.
+                EmployeesListBox.Items.Add(emp);
+
+                // Write all the updated Employee objects to the file
+                WriteEmpsToFile();
+            }
+        }
     }
 }
