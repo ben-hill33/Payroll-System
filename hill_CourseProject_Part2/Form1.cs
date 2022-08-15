@@ -35,7 +35,31 @@ namespace hill_CourseProject_Part2
                 int vacation = Int32.Parse(frmInput.VacationTextBox.Text);
 
                 Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
-                Employee emp = new Employee(fstName, lstName, ssn, hireDate, benefits);
+                Employee emp;
+
+                if (frmInput.HourlyRadioButton.Checked)
+                {
+                    // get child items
+                    float hourlyRate = float.Parse(frmInput.PayOneTextBox.Text);
+                    float hoursWorked = Convert.ToSingle(frmInput.PayTwoTextBox.Text);
+
+                    // Polymorphism -- poly - many; morph - change into
+                    // Parent Employee becomes new child object Hourly
+                    emp = new Hourly(fstName, lstName, ssn, hireDate, benefits, hourlyRate, hoursWorked);
+                }
+                else if (frmInput.SalaryRadioButton.Checked)
+                {
+                    // get child items
+                    double salary = Convert.ToDouble(frmInput.PayOneTextBox.Text);
+
+                    // Polymorphism
+                    emp = new Salary(fstName, lstName, ssn, hireDate, benefits, salary);
+                }
+                else
+                {
+                    MessageBox.Show("Error. Invalid Employee Type.");
+                    return; // end method if error.
+                }
 
                 // Add Employee object to employee listbox
                 EmployeesListBox.Items.Add(emp);

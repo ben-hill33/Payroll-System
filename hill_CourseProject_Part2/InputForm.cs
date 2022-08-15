@@ -28,5 +28,34 @@ namespace hill_CourseProject_Part2
             this.DialogResult = DialogResult.Cancel;
         }
 
+        private void HourlyRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowControls();
+        }
+
+
+
+        private void SalaryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowControls();
+        }
+        
+        private void ShowControls()
+        {
+            // show appropriate controls
+            if (HourlyRadioButton.Checked)
+            {
+                PayOneLabel.Text = "Hourly Rate: ";
+                PayTwoLabel.Text = "Hours Worked: ";
+                PayTwoLabel.Visible = true;
+                PayTwoTextBox.Visible = true;
+            }
+            else if (SalaryRadioButton.Checked)
+            {
+                PayOneLabel.Text = "Annual Salary: ";
+                PayTwoLabel.Visible = false;
+                PayTwoTextBox.Visible = false;
+            }
+        }
     }
 }

@@ -45,13 +45,19 @@
             this.LifeInsLabel = new System.Windows.Forms.Label();
             this.HealthInsTextBox = new System.Windows.Forms.TextBox();
             this.HealthInsLabel = new System.Windows.Forms.Label();
+            this.HourlyRadioButton = new System.Windows.Forms.RadioButton();
+            this.SalaryRadioButton = new System.Windows.Forms.RadioButton();
+            this.PayOneTextBox = new System.Windows.Forms.TextBox();
+            this.PayOneLabel = new System.Windows.Forms.Label();
+            this.PayTwoTextBox = new System.Windows.Forms.TextBox();
+            this.PayTwoLabel = new System.Windows.Forms.Label();
             this.BenefitsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(61, 44);
+            this.FirstNameLabel.Location = new System.Drawing.Point(54, 111);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(155, 31);
             this.FirstNameLabel.TabIndex = 0;
@@ -59,14 +65,14 @@
             // 
             // FirstNameTextBox
             // 
-            this.FirstNameTextBox.Location = new System.Drawing.Point(239, 41);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(319, 111);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(382, 38);
-            this.FirstNameTextBox.TabIndex = 1;
+            this.FirstNameTextBox.TabIndex = 2;
             // 
             // LastNameTextBox
             // 
-            this.LastNameTextBox.Location = new System.Drawing.Point(239, 85);
+            this.LastNameTextBox.Location = new System.Drawing.Point(319, 155);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(382, 38);
             this.LastNameTextBox.TabIndex = 3;
@@ -74,7 +80,7 @@
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(61, 88);
+            this.LastNameLabel.Location = new System.Drawing.Point(54, 155);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(153, 31);
             this.LastNameLabel.TabIndex = 2;
@@ -82,15 +88,15 @@
             // 
             // SSNTextBox
             // 
-            this.SSNTextBox.Location = new System.Drawing.Point(239, 129);
+            this.SSNTextBox.Location = new System.Drawing.Point(319, 199);
             this.SSNTextBox.Name = "SSNTextBox";
             this.SSNTextBox.Size = new System.Drawing.Size(382, 38);
-            this.SSNTextBox.TabIndex = 5;
+            this.SSNTextBox.TabIndex = 4;
             // 
             // SSNLabel
             // 
             this.SSNLabel.AutoSize = true;
-            this.SSNLabel.Location = new System.Drawing.Point(61, 132);
+            this.SSNLabel.Location = new System.Drawing.Point(54, 199);
             this.SSNLabel.Name = "SSNLabel";
             this.SSNLabel.Size = new System.Drawing.Size(78, 31);
             this.SSNLabel.TabIndex = 4;
@@ -98,15 +104,15 @@
             // 
             // HireDateTextBox
             // 
-            this.HireDateTextBox.Location = new System.Drawing.Point(239, 173);
+            this.HireDateTextBox.Location = new System.Drawing.Point(319, 243);
             this.HireDateTextBox.Name = "HireDateTextBox";
             this.HireDateTextBox.Size = new System.Drawing.Size(382, 38);
-            this.HireDateTextBox.TabIndex = 7;
+            this.HireDateTextBox.TabIndex = 5;
             // 
             // HireDateLabel
             // 
             this.HireDateLabel.AutoSize = true;
-            this.HireDateLabel.Location = new System.Drawing.Point(61, 176);
+            this.HireDateLabel.Location = new System.Drawing.Point(54, 243);
             this.HireDateLabel.Name = "HireDateLabel";
             this.HireDateLabel.Size = new System.Drawing.Size(137, 31);
             this.HireDateLabel.TabIndex = 6;
@@ -115,10 +121,10 @@
             // SubmitButton
             // 
             this.SubmitButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.SubmitButton.Location = new System.Drawing.Point(136, 580);
+            this.SubmitButton.Location = new System.Drawing.Point(145, 621);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(258, 68);
-            this.SubmitButton.TabIndex = 8;
+            this.SubmitButton.TabIndex = 9;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
@@ -126,10 +132,10 @@
             // ExitButton
             // 
             this.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ExitButton.Location = new System.Drawing.Point(426, 580);
+            this.ExitButton.Location = new System.Drawing.Point(435, 621);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(288, 68);
-            this.ExitButton.TabIndex = 9;
+            this.ExitButton.TabIndex = 10;
             this.ExitButton.Text = "Cancel";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
@@ -142,10 +148,10 @@
             this.BenefitsGroupBox.Controls.Add(this.LifeInsLabel);
             this.BenefitsGroupBox.Controls.Add(this.HealthInsTextBox);
             this.BenefitsGroupBox.Controls.Add(this.HealthInsLabel);
-            this.BenefitsGroupBox.Location = new System.Drawing.Point(67, 259);
+            this.BenefitsGroupBox.Location = new System.Drawing.Point(60, 383);
             this.BenefitsGroupBox.Name = "BenefitsGroupBox";
-            this.BenefitsGroupBox.Size = new System.Drawing.Size(755, 276);
-            this.BenefitsGroupBox.TabIndex = 10;
+            this.BenefitsGroupBox.Size = new System.Drawing.Size(749, 219);
+            this.BenefitsGroupBox.TabIndex = 8;
             this.BenefitsGroupBox.TabStop = false;
             this.BenefitsGroupBox.Text = "Benefits";
             // 
@@ -154,7 +160,7 @@
             this.VacationTextBox.Location = new System.Drawing.Point(269, 156);
             this.VacationTextBox.Name = "VacationTextBox";
             this.VacationTextBox.Size = new System.Drawing.Size(446, 38);
-            this.VacationTextBox.TabIndex = 7;
+            this.VacationTextBox.TabIndex = 2;
             // 
             // VacationLabel
             // 
@@ -170,7 +176,7 @@
             this.LifeInsTextBox.Location = new System.Drawing.Point(269, 106);
             this.LifeInsTextBox.Name = "LifeInsTextBox";
             this.LifeInsTextBox.Size = new System.Drawing.Size(446, 38);
-            this.LifeInsTextBox.TabIndex = 5;
+            this.LifeInsTextBox.TabIndex = 1;
             // 
             // LifeInsLabel
             // 
@@ -186,7 +192,7 @@
             this.HealthInsTextBox.Location = new System.Drawing.Point(269, 56);
             this.HealthInsTextBox.Name = "HealthInsTextBox";
             this.HealthInsTextBox.Size = new System.Drawing.Size(446, 38);
-            this.HealthInsTextBox.TabIndex = 3;
+            this.HealthInsTextBox.TabIndex = 0;
             // 
             // HealthInsLabel
             // 
@@ -197,11 +203,73 @@
             this.HealthInsLabel.TabIndex = 2;
             this.HealthInsLabel.Text = "Health Insurance:";
             // 
+            // HourlyRadioButton
+            // 
+            this.HourlyRadioButton.AutoSize = true;
+            this.HourlyRadioButton.Location = new System.Drawing.Point(304, 30);
+            this.HourlyRadioButton.Name = "HourlyRadioButton";
+            this.HourlyRadioButton.Size = new System.Drawing.Size(111, 35);
+            this.HourlyRadioButton.TabIndex = 0;
+            this.HourlyRadioButton.TabStop = true;
+            this.HourlyRadioButton.Text = "Hourly";
+            this.HourlyRadioButton.UseVisualStyleBackColor = true;
+            this.HourlyRadioButton.CheckedChanged += new System.EventHandler(this.HourlyRadioButton_CheckedChanged);
+            // 
+            // SalaryRadioButton
+            // 
+            this.SalaryRadioButton.AutoSize = true;
+            this.SalaryRadioButton.Location = new System.Drawing.Point(456, 30);
+            this.SalaryRadioButton.Name = "SalaryRadioButton";
+            this.SalaryRadioButton.Size = new System.Drawing.Size(109, 35);
+            this.SalaryRadioButton.TabIndex = 1;
+            this.SalaryRadioButton.TabStop = true;
+            this.SalaryRadioButton.Text = "Salary";
+            this.SalaryRadioButton.UseVisualStyleBackColor = true;
+            this.SalaryRadioButton.CheckedChanged += new System.EventHandler(this.SalaryRadioButton_CheckedChanged);
+            // 
+            // PayOneTextBox
+            // 
+            this.PayOneTextBox.Location = new System.Drawing.Point(319, 287);
+            this.PayOneTextBox.Name = "PayOneTextBox";
+            this.PayOneTextBox.Size = new System.Drawing.Size(382, 38);
+            this.PayOneTextBox.TabIndex = 6;
+            // 
+            // PayOneLabel
+            // 
+            this.PayOneLabel.AutoSize = true;
+            this.PayOneLabel.Location = new System.Drawing.Point(54, 287);
+            this.PayOneLabel.Name = "PayOneLabel";
+            this.PayOneLabel.Size = new System.Drawing.Size(166, 31);
+            this.PayOneLabel.TabIndex = 13;
+            this.PayOneLabel.Text = "Hourly Rate:";
+            // 
+            // PayTwoTextBox
+            // 
+            this.PayTwoTextBox.Location = new System.Drawing.Point(319, 331);
+            this.PayTwoTextBox.Name = "PayTwoTextBox";
+            this.PayTwoTextBox.Size = new System.Drawing.Size(382, 38);
+            this.PayTwoTextBox.TabIndex = 7;
+            // 
+            // PayTwoLabel
+            // 
+            this.PayTwoLabel.AutoSize = true;
+            this.PayTwoLabel.Location = new System.Drawing.Point(54, 331);
+            this.PayTwoLabel.Name = "PayTwoLabel";
+            this.PayTwoLabel.Size = new System.Drawing.Size(195, 31);
+            this.PayTwoLabel.TabIndex = 15;
+            this.PayTwoLabel.Text = "Hours Worked:";
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 685);
+            this.ClientSize = new System.Drawing.Size(869, 709);
+            this.Controls.Add(this.PayTwoTextBox);
+            this.Controls.Add(this.PayTwoLabel);
+            this.Controls.Add(this.PayOneTextBox);
+            this.Controls.Add(this.PayOneLabel);
+            this.Controls.Add(this.SalaryRadioButton);
+            this.Controls.Add(this.HourlyRadioButton);
             this.Controls.Add(this.BenefitsGroupBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.SubmitButton);
@@ -243,5 +311,11 @@
         public System.Windows.Forms.TextBox HealthInsTextBox;
         private System.Windows.Forms.Label HealthInsLabel;
         public System.Windows.Forms.Button SubmitButton;
+        public System.Windows.Forms.TextBox PayOneTextBox;
+        private System.Windows.Forms.Label PayOneLabel;
+        public System.Windows.Forms.TextBox PayTwoTextBox;
+        private System.Windows.Forms.Label PayTwoLabel;
+        public System.Windows.Forms.RadioButton HourlyRadioButton;
+        public System.Windows.Forms.RadioButton SalaryRadioButton;
     }
 }
