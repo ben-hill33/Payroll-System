@@ -13,7 +13,6 @@ namespace hill_CourseProject_Part2
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-
             // Add item to employee listbox.
             InputForm frmInput = new InputForm();
 
