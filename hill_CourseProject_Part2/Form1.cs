@@ -150,7 +150,23 @@ namespace hill_CourseProject_Part2
 
         private void PrintPaychecksButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Printing paychecks for all employees...");
+            string displayString = "";
+            foreach (Employee emp in EmployeesListBox.Items)
+            {
+                if (emp is Salary)
+                {
+                    Salary empSalary = (Salary)emp;
+                    displayString = displayString + empSalary.ToString() 
+                        + ", Pay: $" + empSalary.CalculatePay() + "\n";
+                }
+                if (emp is Hourly)
+                {
+                    Hourly empHourly = (Hourly)emp;
+                    displayString = displayString + empHourly.ToString() 
+                        + ", Pay: $" + empHourly.CalculatePay() + "\n";
+                }
+            }
+            MessageBox.Show(displayString);
         }
 
         private void EmployeesListBox_DoubleClick(object sender, EventArgs e)
