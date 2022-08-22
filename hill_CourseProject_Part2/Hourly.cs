@@ -32,7 +32,7 @@ namespace hill_CourseProject_Part2
         public override string ToString()
         {
             return base.ToString() + ", Hourly Rate: " + 
-                hourlyRate.ToString("C") + ", Hours Worked " + hoursWorked.ToString();
+                hourlyRate.ToString("C") + ", Hours Worked: " + hoursWorked.ToString();
         }
 
         public override double CalculatePay()
